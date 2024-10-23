@@ -4,6 +4,9 @@ metadata:
   name: mariadb-docker-entrypoint-initdb-d
   namespace: {{ .Values.namespace }}
 data:
+  my.cnf: |
+    [mysqld]
+    max_connections = 500
   create_db.sql: |
     CREATE DATABASE IF NOT EXISTS `shkeeper`;
     CREATE DATABASE IF NOT EXISTS `ethereum-shkeeper`;
@@ -11,8 +14,3 @@ data:
     CREATE DATABASE IF NOT EXISTS `xrp-shkeeper`;
     CREATE DATABASE IF NOT EXISTS `polygon-shkeeper`;
     CREATE DATABASE IF NOT EXISTS `avalanche-shkeeper`;
-
-  my.cnf: |
-    [mysqld]
-    max_connections = 500
-    # You can add other configuration settings as needed

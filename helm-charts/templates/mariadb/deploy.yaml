@@ -37,3 +37,6 @@ spec:
       - name: mariadb-docker-entrypoint-initdb-d
         configMap:
           name: mariadb-docker-entrypoint-initdb-d
+      - name: mariadb-config
+        configMap:
+          name: mariadb-docker-entrypoint-initdb-d  # Reusing the same ConfigMap for the config
