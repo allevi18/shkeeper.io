@@ -27,6 +27,9 @@ spec:
           mountPath: /var/lib/mysql
         - name: mariadb-docker-entrypoint-initdb-d
           mountPath: /docker-entrypoint-initdb.d
+        - name: mariadb-config
+          mountPath: /etc/mysql/my.cnf
+          subPath: my.cnf
       volumes:
       - name: mariadb
         persistentVolumeClaim:
